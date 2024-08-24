@@ -1,0 +1,1 @@
+New bot with the class "bot"
