@@ -44,7 +44,7 @@ async def calculator(ctx, operation:str, number1:int, number2:int):
 
 @bot.command()
 async def helpme(ctx):
-    await ctx.send(f"Available commands: heh; hello; calculator; meme; meme2")
+    await ctx.send(f"Available commands: heh; hello; calculator; meme; meme2; meme_list")
 
 
 @bot.command()
@@ -63,8 +63,12 @@ async def meme2(ctx):
     with open(f"img/{z}", "rb") as y:
         picture = discord.File(y)
         await ctx.send(file = picture)
-
+@bot.command()
+async def meme_list(ctx):
+    memes_list = os.listdir("img")
+    await ctx.send(f"List of memes: {memes_list}")
+    
         
 
 
-bot.run("Token goes here")
+bot.run("Token goes here!")
